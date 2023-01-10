@@ -1,46 +1,3 @@
-
---Import Prelude (pi)
-
-
--- Eleva um numero ao quadrado
--- Aqui temos um comentario!
-square :: Int -> Int
-square x = x^2
-
--- Verifica se um numero eh par 
--- Ilustra uso de if/then/else para expressar condicional 
--- A funcao 'mod' retorna o resto da divisao inteira
--- A função seguinte apresenta uma versão melhorada
-isEven :: Int -> Bool
-isEven n = if mod n 2 == 0 then True else False
-
--- Versão melhorada da função anterior
--- A comparação == resulta True/False, por isso
--- o if-then-else é desnecessário neste caso
-isEvenBetter :: Int -> Bool
-isEvenBetter n = mod n 2 == 0
-
--- Gera um numero a partir de um caracter 
--- Note esta estrutura condicional em Haskell, usando 'guardas' (|)
-encodeMe :: Char -> Int
-encodeMe c 
-   | c == 'S'  = 0
-   | c == 'N'  = 1
-   | otherwise = undefined
-
--- Calcula o quadrado do primeiro elemento da lista
--- Note que '[Int]' designa uma lista de elementos do tipo Int 
-squareFirst :: [Int] -> Int
-squareFirst lis = (head lis)^2
-
--- Verifica se uma palavra tem mais de 10 caracteres
-isLongWord :: String -> Bool -- isso é o mesmo que: isLongWord :: [Char] -> Bool
-isLongWord s = length s > 10
-
-
-
-
-
 -- 1) Crie uma função sumSquares :: Int -> Int -> Int que receba dois números x e y e calcule a soma dos seus quadrados.
 sumSquares :: Int -> Int -> Int
 sumSquares x y = x^2 + y^2 
@@ -64,12 +21,29 @@ htmlItem word = "<li>" ++ word ++ "</li>"
 --6) Nao solicitada nas atividades
 
 --7) Crie uma função startsWithA :: String -> Bool que receba uma string e verifique se ela inicia com o caracter 'A'.
---startsWithA :: String -> Bool
---startsWithA word = "A"++ word
+startsWithA :: String -> Bool
+startsWithA word = head word == 'A'
+
+--8) Defina uma função isVerb :: String -> Bool que receba uma string e verifique se ela termina com o caracter 'r'. Antes desse exercício, teste no interpretador a função pré-definida last, que retorna o último elemento de uma lista. Dica: conheça também o list monster, do autor Miran Lipovača 🙂
+isVerb :: String -> Bool
+isVerb word = last word == 'r'
+
+-- 9) Crie uma função isVowel :: Char -> Bool que receba um caracter e verifique se ele é uma vogal minúscula.
+isVowel :: Char -> Bool
+isVowel caracter = caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o'|| caracter == 'u'
+
+-- 10) Crie uma função hasEqHeads :: [Int] -> [Int] -> Bool que verifique se 2 listas possuem o mesmo primeiro elemento. Use a função head e o operador lógico == para verificar igualdade.
+hasEqHeads :: [Int] -> [Int] -> Bool
+hasEqHeads listaInteiros1 listaInteiros2 = head listaInteiros1 == head listaInteiros2
+
+-- 11) A função pré-definida elem recebe um elemento e uma lista, e verifica se o elemento está presente ou não na lista. Teste essa função no interpretador:
+--elem 3 [1,2,3]
+--elem 4 [1,2,3]
+--elem 'c' "abcd"
+--elem 'A' "abcd"
+--isVowel2 :: Char -> Bool
 
 main = do
-  --print (isLongWord 'test')
-  --print (allInitials ["Fulano", "Beltrano"])
   --1)
   print(sumSquares 2 6)
   --2)
@@ -82,4 +56,10 @@ main = do
   print(htmlItem "string")
   --6) nao solicitada nas atividades
   --7)
-  --print(startsWithA "Astring")
+  print(startsWithA "Astring")
+  --8) 
+  print(isVerb "pensar")
+  --9) 
+  print(isVowel 'b')
+  --10) 
+  print(hasEqHeads[2,2,3][1,3,5])
