@@ -1,6 +1,6 @@
 -- 1) Crie uma função sumSquares :: Int -> Int -> Int que receba dois números x e y e calcule a soma dos seus quadrados.
 sumSquares :: Int -> Int -> Int
-sumSquares x y = x^2 + y^2 
+sumSquares x y = x^2 + y^2
 
 -- 2) Defina a função circleArea :: Float -> Float que receba um raio r e calcule a área de um círculo com esse raio, dada por pi vezes o raio ao quadrado. Dica: Haskell tem a função pi pré-definida.
 circleArea :: Float -> Float
@@ -37,11 +37,9 @@ hasEqHeads :: [Int] -> [Int] -> Bool
 hasEqHeads listaInteiros1 listaInteiros2 = head listaInteiros1 == head listaInteiros2
 
 -- 11) A função pré-definida elem recebe um elemento e uma lista, e verifica se o elemento está presente ou não na lista. Teste essa função no interpretador:
---elem 3 [1,2,3]
---elem 4 [1,2,3]
---elem 'c' "abcd"
---elem 'A' "abcd"
---isVowel2 :: Char -> Bool
+
+isVowel2 :: Char -> Bool
+isVowel2 elemento = elem elemento "aeiou" || elem elemento "AEIOU"
 
 main = do
   --1)
@@ -57,9 +55,11 @@ main = do
   --6) nao solicitada nas atividades
   --7)
   print(startsWithA "Astring")
-  --8) 
+  --8)
   print(isVerb "pensar")
-  --9) 
+  --9)
   print(isVowel 'b')
-  --10) 
+  --10)
   print(hasEqHeads[2,2,3][1,3,5])
+  --11)
+  print(isVowel2 'A')
