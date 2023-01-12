@@ -37,7 +37,6 @@ hasEqHeads :: [Int] -> [Int] -> Bool
 hasEqHeads listaInteiros1 listaInteiros2 = head listaInteiros1 == head listaInteiros2
 
 -- 11) A função pré-definida elem recebe um elemento e uma lista, e verifica se o elemento está presente ou não na lista. Teste essa função no interpretador:
-
 isVowel2 :: Char -> Bool
 isVowel2 elemento = elem elemento "aeiou" || elem elemento "AEIOU"
 
