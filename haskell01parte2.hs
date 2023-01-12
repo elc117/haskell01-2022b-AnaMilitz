@@ -43,11 +43,11 @@ onlyBetween60and80 :: [Int] -> [Int]
 onlyBetween60and80 listaNumeros = filter between60and80 listaNumeros
 
 -- 8) Crie uma função countSpaces que receba uma string e retorne o número de espaços nela contidos. Dica 1: você vai precisar de uma função que identifica espaços. Dica 2: aplique funções consecutivamente, isto é, use o resultado de uma função como argumento para outra.
--- identificaEspacos :: Char -> Int -> Int
--- identificaEspacos c counter = if c == ' ' then counter++ return counter
+identificaEspacos :: Char -> Bool
+identificaEspacos c = c == ' ' 
 
--- countSpaces :: String ->  Int
--- countSpaces palavra = filter identificaEspacos palavra
+countSpaces :: String ->  Int
+countSpaces palavra = length (filter identificaEspacos palavra)
 
 -- 9) Escreva uma função calcAreas que, dada uma lista de valores de raios de círculos, retorne uma lista com a área correspondente a cada raio.
 
@@ -76,12 +76,11 @@ main = do
   print (onlyEven [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
   -- 7)
-  print (onlyBetween60and80 [81, 65, 20, 28, 60, 61, 55, 100, 70])
+  print (onlyBetween60and80 [81, 65, 20, 28, 60, 61, 100, 70])
 
   -- 8)
-  -- print(countSpaces " pasasas dsad")
-  -- print(identificaEspacos ' ')
-  -- print (ultimaFunc "dfsdfs")
+  print (countSpaces "quantidade de espacos entre palavras")
+  --print(identificaEspacos ' ')
 
   -- 9)
   print (calcAreas [1, 2, 3])
